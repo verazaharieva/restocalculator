@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { Calculator, RotateCcw, Coins, Banknote, RefreshCw } from "lucide-react";
+import { Calculator, RotateCcw, Coins, Banknote, RefreshCw, Euro } from "lucide-react";
 import CalculatorInput from "@/components/CalculatorInput";
 import ResultDisplay from "@/components/ResultDisplay";
 
 const DEFAULT_RATE = "1.95583";
 
+type PriceCurrency = "EUR" | "BGN";
+
 const Index = () => {
   const [price, setPrice] = useState("");
+  const [priceCurrency, setPriceCurrency] = useState<PriceCurrency>("EUR");
   const [paid, setPaid] = useState("");
   const [rate, setRate] = useState(DEFAULT_RATE);
   const [changeInLeva, setChangeInLeva] = useState<number | null>(null);
@@ -40,14 +43,17 @@ const Index = () => {
       return;
     }
 
-    if (paidNum < priceNum) {
+    // Convert price to Leva if it's in Euro
+    const priceInLeva = priceCurrency === "EUR" ? priceNum * rateNum : priceNum;
+
+    if (paidNum < priceInLeva) {
       setError("Недостатъчна сума");
       setChangeInLeva(null);
       setChangeInEuro(null);
       return;
     }
 
-    const change = paidNum - priceNum;
+    const change = paidNum - priceInLeva;
     const euroChange = change / rateNum;
 
     setError(null);
@@ -57,6 +63,7 @@ const Index = () => {
 
   const reset = () => {
     setPrice("");
+    setPriceCurrency("EUR");
     setPaid("");
     setRate(DEFAULT_RATE);
     setChangeInLeva(null);
@@ -84,14 +91,43 @@ const Index = () => {
       <main className="container py-6 space-y-6 animate-slide-up">
         {/* Input Fields */}
         <div className="bg-card rounded-xl p-5 shadow-soft space-y-5">
-          <CalculatorInput
-            label="Цена"
-            value={price}
-            onChange={setPrice}
-            placeholder="0.00"
-            suffix="лв."
-            icon={<Coins className="w-5 h-5" />}
-          />
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <label className="block text-sm font-semibold text-muted-foreground uppercase tracking-wide">
+                Цена
+              </label>
+              <div className="flex bg-secondary rounded-lg p-1">
+                <button
+                  onClick={() => setPriceCurrency("EUR")}
+                  className={`px-3 py-1 text-sm font-bold rounded-md transition-all duration-200 ${
+                    priceCurrency === "EUR"
+                      ? "bg-primary text-primary-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  €
+                </button>
+                <button
+                  onClick={() => setPriceCurrency("BGN")}
+                  className={`px-3 py-1 text-sm font-bold rounded-md transition-all duration-200 ${
+                    priceCurrency === "BGN"
+                      ? "bg-primary text-primary-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  лв.
+                </button>
+              </div>
+            </div>
+            <CalculatorInput
+              label=""
+              value={price}
+              onChange={setPrice}
+              placeholder="0.00"
+              suffix={priceCurrency === "EUR" ? "€" : "лв."}
+              icon={priceCurrency === "EUR" ? <Euro className="w-5 h-5" /> : <Coins className="w-5 h-5" />}
+            />
+          </div>
 
           <CalculatorInput
             label="Платена сума"
