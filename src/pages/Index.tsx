@@ -162,7 +162,7 @@ const Index = () => {
           </div>
 
           <CalculatorInput
-            label="Платена сума"
+           label={texts[lang].paid}
             value={paid}
             onChange={setPaid}
             placeholder="0.00"
