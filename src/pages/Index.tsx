@@ -126,7 +126,7 @@ const Index = () => {
           <div className="space-y-2">
             <div className="flex items-center justify-between">
               <label className="block text-sm font-semibold text-muted-foreground uppercase tracking-wide">
-                Цена
+                {texts[lang].price}
               </label>
               <div className="flex bg-secondary rounded-lg p-1">
                 <button
