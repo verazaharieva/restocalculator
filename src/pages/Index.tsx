@@ -7,6 +7,14 @@ import { useLanguage } from "../language";
 const DEFAULT_RATE = "1.95583";
 
 type PriceCurrency = "EUR" | "BGN";
+const texts = {
+  bg: {
+    title: "Калкулатор Ресто",
+  },
+  en: {
+    title: "Change Calculator",
+  },
+};
 
 const Index = () => {
   const { lang, setLang } = useLanguage();
@@ -94,8 +102,8 @@ const Index = () => {
               <Calculator className="w-5 h-5 text-primary-foreground" />
             </div>
             <h1 className="text-xl font-extrabold text-foreground">
-              Калкулатор Ресто
-            </h1>
+          {texts[lang].title}
+         </h1>
           </div>
         </div>
       </header>
