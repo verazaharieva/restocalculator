@@ -222,7 +222,7 @@ const Index = () => {
 
         {/* Install Hint */}
         <p className="text-center text-sm text-muted-foreground">
-          Добавете приложението на Home Screen за бърз достъп
+        {texts[lang].hint.enter}
         </p>
       </main>
     </div>
