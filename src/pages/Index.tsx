@@ -17,6 +17,7 @@ const texts = {
     reset: "Нулирай",
     change: "Ресто",
     currencyBGN: "BGN",
+    footer: { poweredBy: "Powered by Libra Planet" },
     hint: {
       enter: 'Въведете стойности и натиснете "Изчисли"',
     },
@@ -36,6 +37,7 @@ const texts = {
     reset: "Reset",
     change: "Change",
     currencyBGN: "BGN",
+    footer: { poweredBy: "Powered by Libra Planet" },
     hint: {
       enter: 'Enter values and press "Calculate"',
     },
@@ -228,6 +230,16 @@ const Index = () => {
         <p className="text-center text-sm text-muted-foreground">
         {texts[lang].hint.enter}
         </p>
+        <footer className="pt-6 text-center">
+  <a
+    href="https://libraplanet.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-xs text-muted-foreground hover:text-foreground transition"
+  >
+    {texts[lang].footer.poweredBy}
+  </a>
+</footer>
       </main>
     </div>
       </>
