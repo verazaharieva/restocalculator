@@ -10,11 +10,22 @@ type PriceCurrency = "EUR" | "BGN";
 const texts = {
   bg: {
     title: "Калкулатор Ресто",
+    price: "Цена",
+    paid: "Платена сума",
+    rate: "Курс EUR/BGN",
+    calculate: "Изчисли",
+    reset: "Нулирай",
   },
   en: {
     title: "Change Calculator",
+    price: "Price",
+    paid: "Amount paid",
+    rate: "Exchange rate EUR/BGN",
+    calculate: "Calculate",
+    reset: "Reset",
   },
 };
+
 
 const Index = () => {
   const { lang, setLang } = useLanguage();
