@@ -216,14 +216,14 @@ const Index = () => {
             {texts[lang].calculate}
           </button>
         </div>
-
-        {/* Result Display */}
         <ResultDisplay
-          changeInLeva={changeInLeva}
-          changeInEuro={changeInEuro}
-          error={error}
+        changeInLeva={changeInLeva}
+        changeInEuro={changeInEuro}
+        error={error}
+        hint={texts[lang].hint.enter}
+        title={texts[lang].change}
+        currencyBGN={texts[lang].currencyBGN}
         />
-
         {/* Install Hint */}
         <p className="text-center text-sm text-muted-foreground">
         {texts[lang].hint.enter}
