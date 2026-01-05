@@ -167,7 +167,7 @@ const Index = () => {
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  лв.
+                  BGN
                 </button>
               </div>
             </div>
@@ -176,7 +176,7 @@ const Index = () => {
               value={price}
               onChange={setPrice}
               placeholder="0.00"
-              suffix={priceCurrency === "EUR" ? "€" : "лв."}
+              suffix={priceCurrency === "EUR" ? "€" : "BGN"}
               icon={priceCurrency === "EUR" ? <Euro className="w-5 h-5" /> : <Coins className="w-5 h-5" />}
             />
           </div>
@@ -186,7 +186,7 @@ const Index = () => {
             value={paid}
             onChange={setPaid}
             placeholder="0.00"
-            suffix="лв."
+            suffix="BGN"
             icon={<Banknote className="w-5 h-5" />}
           />
 
