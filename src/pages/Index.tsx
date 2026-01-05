@@ -227,9 +227,6 @@ const Index = () => {
         currencyBGN={texts[lang].currencyBGN}
         />
         {/* Install Hint */}
-        <p className="text-center text-sm text-muted-foreground">
-        {texts[lang].hint.enter}
-        </p>
         <footer className="pt-6 text-center">
   <a
     href="https://linktr.ee/libraplanet"
