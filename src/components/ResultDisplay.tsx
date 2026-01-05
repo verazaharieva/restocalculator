@@ -4,6 +4,7 @@ interface ResultDisplayProps {
   changeInLeva: number | null;
   changeInEuro: number | null;
   error: string | null;
+  hint: string;
 }
 
 const ResultDisplay = ({ changeInLeva, changeInEuro, error }: ResultDisplayProps) => {
