@@ -15,6 +15,12 @@ const texts = {
     rate: "Курс EUR/BGN",
     calculate: "Изчисли",
     reset: "Нулирай",
+    errors: {
+      invalidValues: "Моля въведете валидни стойности",
+      negativeValues: "Стойностите не могат да бъдат отрицателни",
+      invalidRate: "Невалиден валутен курс",
+      insufficient: "Недостатъчна сума",
+    },
   },
   en: {
     title: "Change Calculator",
@@ -23,10 +29,14 @@ const texts = {
     rate: "Exchange rate EUR/BGN",
     calculate: "Calculate",
     reset: "Reset",
+    errors: {
+      invalidValues: "Please enter valid values",
+      negativeValues: "Values cannot be negative",
+      invalidRate: "Invalid exchange rate",
+      insufficient: "Insufficient amount",
+    },
   },
 };
-
-
 const Index = () => {
   const { lang, setLang } = useLanguage();
   const [price, setPrice] = useState("");
