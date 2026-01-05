@@ -7,7 +7,7 @@ interface ResultDisplayProps {
   hint: string;
 }
 
-const ResultDisplay = ({ changeInLeva, changeInEuro, error }: ResultDisplayProps) => {
+const ResultDisplay = ({ changeInLeva, changeInEuro, error,  hint }: ResultDisplayProps) => {
   if (error) {
     return (
       <div className="animate-pop bg-destructive/10 border-2 border-destructive/30 rounded-xl p-6 text-center">
@@ -22,9 +22,9 @@ const ResultDisplay = ({ changeInLeva, changeInEuro, error }: ResultDisplayProps
   if (changeInLeva === null || changeInEuro === null) {
     return (
       <div className="bg-muted/50 border-2 border-dashed border-border rounded-xl p-6 text-center">
-        <p className="text-muted-foreground font-medium">
-          Въведете стойности и натиснете "Изчисли"
-        </p>
+       <p className="text-muted-foreground font-medium">
+      {hint}
+      </p>
       </div>
     );
   }
