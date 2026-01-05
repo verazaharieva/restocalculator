@@ -186,14 +186,14 @@ const Index = () => {
             className="h-14 bg-secondary hover:bg-secondary/80 text-secondary-foreground font-bold text-lg rounded-lg transition-all duration-200 active:scale-95 flex items-center justify-center gap-2"
           >
             <RotateCcw className="w-5 h-5" />
-            Нулирай
+            {texts[lang].reset}
           </button>
           <button
             onClick={calculate}
             className="h-14 gradient-warm hover:opacity-90 text-primary-foreground font-bold text-lg rounded-lg shadow-button transition-all duration-200 active:scale-95 flex items-center justify-center gap-2"
           >
             <Calculator className="w-5 h-5" />
-            Изчисли
+            {texts[lang].calculate}
           </button>
         </div>
 
