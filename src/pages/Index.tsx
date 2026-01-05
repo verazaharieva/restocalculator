@@ -54,21 +54,21 @@ const Index = () => {
 
     // Validation
     if (isNaN(priceNum) || isNaN(paidNum)) {
-      setError("Моля въведете валидни стойности");
+      setError(texts[lang].errors.invalidValues);
       setChangeInLeva(null);
       setChangeInEuro(null);
       return;
     }
 
     if (priceNum < 0 || paidNum < 0) {
-      setError("Стойностите не могат да бъдат отрицателни");
+      setError(texts[lang].errors.negativeValues);
       setChangeInLeva(null);
       setChangeInEuro(null);
       return;
     }
 
     if (isNaN(rateNum) || rateNum <= 0) {
-      setError("Невалиден валутен курс");
+      setError(texts[lang].errors.invalidRate);
       setChangeInLeva(null);
       setChangeInEuro(null);
       return;
@@ -78,7 +78,7 @@ const Index = () => {
     const priceInLeva = priceCurrency === "EUR" ? priceNum * rateNum : priceNum;
 
     if (paidNum < priceInLeva) {
-      setError("Недостатъчна сума");
+      setError(texts[lang].errors.insufficient);
       setChangeInLeva(null);
       setChangeInEuro(null);
       return;
