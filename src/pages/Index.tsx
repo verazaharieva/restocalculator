@@ -2,12 +2,14 @@ import { useState } from "react";
 import { Calculator, RotateCcw, Coins, Banknote, RefreshCw, Euro } from "lucide-react";
 import CalculatorInput from "@/components/CalculatorInput";
 import ResultDisplay from "@/components/ResultDisplay";
+import { useLanguage } from "../language";
 
 const DEFAULT_RATE = "1.95583";
 
 type PriceCurrency = "EUR" | "BGN";
 
 const Index = () => {
+  const { lang, setLang } = useLanguage();
   const [price, setPrice] = useState("");
   const [priceCurrency, setPriceCurrency] = useState<PriceCurrency>("EUR");
   const [paid, setPaid] = useState("");
@@ -72,6 +74,17 @@ const Index = () => {
   };
 
   return (
+    <>
+  <div style={{ textAlign: "right", marginBottom: 8 }}>
+    <button onClick={() => setLang("bg")} disabled={lang === "bg"}>
+      BG
+    </button>
+    {" | "}
+    <button onClick={() => setLang("en")} disabled={lang === "en"}>
+      EN
+    </button>
+  </div>
+
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="bg-card shadow-soft border-b border-border">
@@ -178,6 +191,7 @@ const Index = () => {
         </p>
       </main>
     </div>
+      </>
   );
 };
 
