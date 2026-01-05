@@ -15,6 +15,8 @@ const texts = {
     rate: "Курс EUR/BGN",
     calculate: "Изчисли",
     reset: "Нулирай",
+    change: "Ресто",
+    currencyBGN: "BGN",
     hint: {
       enter: 'Въведете стойности и натиснете "Изчисли"',
     },
@@ -32,6 +34,8 @@ const texts = {
     rate: "Exchange rate EUR/BGN",
     calculate: "Calculate",
     reset: "Reset",
+    change: "Change",
+    currencyBGN: "BGN",
     hint: {
       enter: 'Enter values and press "Calculate"',
     },
