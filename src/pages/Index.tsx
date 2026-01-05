@@ -15,6 +15,9 @@ const texts = {
     rate: "Курс EUR/BGN",
     calculate: "Изчисли",
     reset: "Нулирай",
+    hint: {
+      enter: 'Въведете стойности и натиснете "Изчисли"',
+    },
     errors: {
       invalidValues: "Моля въведете валидни стойности",
       negativeValues: "Стойностите не могат да бъдат отрицателни",
@@ -29,6 +32,9 @@ const texts = {
     rate: "Exchange rate EUR/BGN",
     calculate: "Calculate",
     reset: "Reset",
+    hint: {
+      enter: 'Enter values and press "Calculate"',
+    },
     errors: {
       invalidValues: "Please enter valid values",
       negativeValues: "Values cannot be negative",
