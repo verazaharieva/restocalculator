@@ -171,7 +171,7 @@ const Index = () => {
           />
 
           <CalculatorInput
-            label="Курс EUR/BGN"
+            label={texts[lang].rate}
             value={rate}
             onChange={setRate}
             placeholder="1.95583"
